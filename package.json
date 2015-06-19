@@ -1,6 +1,6 @@
 {
   "name": "architect-elasticsearch",
-  "version": "1.0.0-pre",
+  "version": "1.0.0",
   "description": "Expose Elasticsearch.JS to architect framework",
   "main": "lib/index.js",
   "repository": {
