@@ -43,7 +43,7 @@ describe('[ARCHITECT][ELASTICSEARCH] Documents', function () {
                     update: function(option, cb) {
                         cb(undefined, option);
                     },
-                    drop: function(option, cb) {
+                    delete: function(option, cb) {
                         cb(undefined, option);
                     },
                     create: function(option, cb) {
@@ -64,7 +64,7 @@ describe('[ARCHITECT][ELASTICSEARCH] Documents', function () {
         });
         
         it('create', function(done) {
-            instance.default.create({id: 74, body: {
+            instance.default.documents.create({id: 74, body: {
                     foo: 'bar'
                 }
             }, function(err, option) {
@@ -80,7 +80,7 @@ describe('[ARCHITECT][ELASTICSEARCH] Documents', function () {
         });
         
         it('update', function(done) {
-            instance.default.update({id: 74, body: {
+            instance.default.documents.update({id: 74, body: {
                     foo: 'bar'
                 }
             }, function(err, option) {
@@ -96,7 +96,7 @@ describe('[ARCHITECT][ELASTICSEARCH] Documents', function () {
         });
 
         it('index', function(done) {
-            instance.default.index({id: 74, body: {
+            instance.default.documents.index({id: 74, body: {
                     foo: 'bar'
                 }
             }, function(err, option) {
@@ -112,7 +112,7 @@ describe('[ARCHITECT][ELASTICSEARCH] Documents', function () {
         });
         
         it('get', function(done) {
-            instance.default.get({ id: 73 }, function(err, option) {
+            instance.default.documents.get({ id: 73 }, function(err, option) {
                 test.assert.ifError(err);
                 test.object(option).is({id: 73,
                     index: "test",
@@ -122,8 +122,8 @@ describe('[ARCHITECT][ELASTICSEARCH] Documents', function () {
             });
         });
         
-        it('drop', function(done) {
-            instance.default.drop({ id: 73 }, function(err, option) {
+        it('delete', function(done) {
+            instance.default.documents.delete({ id: 73 }, function(err, option) {
                 test.assert.ifError(err);
                 test.object(option).is({id: 73,
                     index: "test",

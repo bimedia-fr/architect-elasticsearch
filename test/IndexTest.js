@@ -37,11 +37,16 @@ describe('[ARCHITECT][ELASTICSEARCH] Indexes', function () {
                 }
             }, {
                 mock: {
-                    createIndex: function(option, cb) {
-                        cb(undefined, option);
-                    },
-                    dropIndex: function(option, cb) {
-                        cb(undefined, option);
+                    indices: {
+                        create: function(option, cb) {
+                            cb(undefined, option);
+                        },
+                        putMapping: function(options, cb) {
+                            cb(undefined, options);
+                        },
+                        delete: function(option, cb) {
+                            cb(undefined, option);
+                        }
                     }
                 }
             },
@@ -55,23 +60,21 @@ describe('[ARCHITECT][ELASTICSEARCH] Indexes', function () {
         });
         
         it('create', function(done) {
-            instance.default.createIndex({}, function(err, option) {
+            instance.default.indexes.create({foo: "bar"}, function(err, option) {
                 test.assert.ifError(err);
                 test.object(option).is({
                     index: "test",
-                    type: "test_type"
+                    body: {
+                        foo: "bar"
+                    }
                 });
                 done();
             });
         });
         
         it('drop', function(done) {
-            instance.default.dropIndex({}, function(err, option) {
+            instance.default.indexes.delete(function(err) {
                 test.assert.ifError(err);
-                test.object(option).is({
-                    index: "test",
-                    type: "test_type"
-                });
                 done();
             });
         });
