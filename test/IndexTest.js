@@ -63,7 +63,8 @@ describe('[ARCHITECT][ELASTICSEARCH] Indexes', function () {
             instance.default.indexes.create({foo: "bar"}, function(err, option) {
                 test.assert.ifError(err);
                 test.object(option).is({
-                    index: "test",
+                    index: 'test',
+                    type: 'test_type',
                     body: {
                         foo: "bar"
                     }
