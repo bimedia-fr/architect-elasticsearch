@@ -1,0 +1,35 @@
+{
+  "name": "architect-elasticsearch",
+  "version": "1.0.0-pre",
+  "description": "Expose Elasticsearch.JS to architect framework",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bimedia-fr/architect-elasticsearch.git"
+  },
+  "scripts": {
+    "test": "mocha --recursive test"
+  },
+  "keywords": [
+    "knex",
+    "architect"
+  ],
+  "author": "Guillaume Chauvet",
+  "license": "Apache License V2.0",
+  "bugs": {
+    "url": "https://github.com/bimedia-fr/architect-elasticsearch/issues"
+  },
+  "dependencies": {
+    "elasticsearch": "5.x.x"
+  },
+  "plugin": {
+    "provides": [
+      "elasticsearch"
+    ]
+  },
+  "devDependencies": {
+    "mocha": "2.x.x",
+    "mockery": "1.x.x",
+    "unit.js": "2.0.x"
+  }
+}
