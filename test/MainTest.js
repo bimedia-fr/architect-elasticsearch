@@ -29,6 +29,7 @@ describe('[ARCHITECT] Elasticsearch', function () {
     });
 
     after(function () {
+        mockery.deregisterAll();
         mockery.disable();
     });
     
@@ -51,7 +52,9 @@ describe('[ARCHITECT] Elasticsearch', function () {
 
     it('with settings', function () {
         plugin({settings: {
-                default: {}
+                default: {
+                    host: 'test:9222'
+                }
             }
         }, {},
         function (err, result) {
