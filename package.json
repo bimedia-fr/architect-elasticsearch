@@ -20,7 +20,8 @@
     "url": "https://github.com/bimedia-fr/architect-elasticsearch/issues"
   },
   "dependencies": {
-    "elasticsearch": "5.x.x"
+    "elasticsearch": "5.x.x",
+    "lodash": "3.9.x"
   },
   "plugin": {
     "provides": [
@@ -29,7 +30,6 @@
   },
   "devDependencies": {
     "mocha": "2.x.x",
-    "mockery": "1.x.x",
     "unit.js": "2.0.x"
   }
 }
