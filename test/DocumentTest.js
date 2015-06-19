@@ -51,6 +51,9 @@ describe('[ARCHITECT][ELASTICSEARCH] Documents', function () {
                     },
                     get: function(option, cb) {
                         cb(undefined, option);
+                    },
+                    search: function(option, cb) {
+                        cb(undefined, option);
                     }
                 }
             },
@@ -102,6 +105,22 @@ describe('[ARCHITECT][ELASTICSEARCH] Documents', function () {
             }, function(err, option) {
                 test.assert.ifError(err);
                 test.object(option).is({id: 74, body: {
+                        foo: 'bar'
+                    },
+                    index: "test",
+                    type: "test_type"
+                });
+                done();
+            });
+        });
+        
+        it('search', function(done) {
+            instance.default.documents.search({body: {
+                    foo: 'bar'
+                }
+            }, function(err, option) {
+                test.assert.ifError(err);
+                test.object(option).is({body: {
                         foo: 'bar'
                     },
                     index: "test",
