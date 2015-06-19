@@ -31,8 +31,25 @@ describe('[ARCHITECT] Elasticsearch', function () {
     after(function () {
         mockery.disable();
     });
+    
+    it('without settings', function () {
+        plugin({}, {},
+        function (err, result) {
+            test.object(err).is(new Error("No settings found"));
+            test.undefined(result);
+        });
+    });
+    
+    it('with empty config', function () {
+        plugin({settings: { }
+        }, {},
+        function (err, result) {
+            test.assert.ifError(err);
+            test.object(result.elasticsearch).isEmpty();
+        });
+    });
 
-    it('test', function () {
+    it('with settings', function () {
         plugin({settings: {
                 default: {}
             }
