@@ -8,7 +8,8 @@
     "url": "git://github.com/bimedia-fr/architect-elasticsearch.git"
   },
   "scripts": {
-    "test": "mocha --recursive test"
+    "test": "mocha --recursive test",
+    "lint": "eslint lib"
   },
   "keywords": [
     "knex",
@@ -29,6 +30,7 @@
     ]
   },
   "devDependencies": {
+    "eslint": "0.22.x",
     "mocha": "2.x.x",
     "unit.js": "2.0.x"
   }
