@@ -34,7 +34,7 @@ module.exports = [{
     packagePath: "architect-elasticsearch",
     settings: {
         default: {
-            host: 'localhost:9200'
+            hosts: ['localhost:9200']
         }
     }
 }, './services'];
