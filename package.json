@@ -1,6 +1,6 @@
 {
   "name": "architect-elasticsearch",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Expose Elasticsearch.JS to architect framework",
   "main": "lib/index.js",
   "repository": {
@@ -21,6 +21,7 @@
     "url": "https://github.com/bimedia-fr/architect-elasticsearch/issues"
   },
   "dependencies": {
+    "agentkeepalive": "2.0.x",
     "elasticsearch": "10.x.x",
     "lodash": "3.9.x"
   },
