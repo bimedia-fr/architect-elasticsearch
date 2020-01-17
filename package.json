@@ -21,7 +21,7 @@
     "url": "https://github.com/bimedia-fr/architect-elasticsearch/issues"
   },
   "dependencies": {
-    "elasticsearch": "16.x"
+    "@elastic/elasticsearch": "^7.5.0"
   },
   "plugin": {
     "provides": [
