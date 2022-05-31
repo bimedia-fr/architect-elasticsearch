@@ -21,9 +21,7 @@
     "url": "https://github.com/bimedia-fr/architect-elasticsearch/issues"
   },
   "dependencies": {
-    "agentkeepalive": "2.0.x",
-    "elasticsearch": "10.x.x",
-    "lodash": "3.9.x"
+    "@elastic/elasticsearch": "^7.x"
   },
   "plugin": {
     "provides": [
@@ -31,8 +29,8 @@
     ]
   },
   "devDependencies": {
-    "eslint": "0.22.x",
-    "mocha": "2.x.x",
-    "unit.js": "2.0.x"
+    "eslint": "^8.16.0",
+    "mocha": "^10.0.0",
+    "unit.js": "^2.1.1"
   }
 }
